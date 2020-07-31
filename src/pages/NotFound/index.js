@@ -1,10 +1,11 @@
 import React from "react";
+import PageDefault from "../../components/PageDefault";
 
 function NotFound() {
   return (
-    <div>
+    <PageDefault>
       <h1>Page 404</h1>
-    </div>
+    </PageDefault>
   );
 }
 
