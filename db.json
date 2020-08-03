@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "FrontEnd",
+      "description": "Learn FrontEnd",
+      "color": "#6BD1FF"
+    },
+    {
+      "id": 2,
+      "name": "BackEnd",
+      "description": "Learn BackEnd",
+      "color": "#00C86F"
+    },
+    {
+      "id": 3,
+      "name": "Data Science and AI",
+      "description": "Learn Data Science and AI",
+      "color": "#5a4a5d"
+    },
+    {
+      "id": 4,
+      "name": "Movies",
+      "description": "Watch Trailers",
+      "color": "orange"
+    },
+    {
+      "id": 5,
+      "name": "Games",
+      "description": "Watch Games",
+      "color": "red"
+    },
+    {
+      "id": 6,
+      "name": "Personal",
+      "description": "Watch Trailers",
+      "color": "#6b5be2"
+    }
+  ]
+}

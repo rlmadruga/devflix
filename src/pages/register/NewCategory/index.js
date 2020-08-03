@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PageDefault from "../../../components/PageDefault";
 import FormField from "../../../components/FormField";
+import Button from "../../../components/Button";
 
 function NewCategory() {
   const initialValues = {
@@ -25,6 +26,14 @@ function NewCategory() {
     setValue(name, value);
   }
 
+  useEffect(() => {
+    const URL = window.location.hostname.includes("localhost") ? "" : "";
+    fetch(URL).then(async (serverResponse) => {
+      const response = await serverResponse.json();
+      setCategories([...response]);
+    });
+  }, []);
+
   return (
     <PageDefault>
       <h1>New Category: {values.name}</h1>
@@ -37,34 +46,33 @@ function NewCategory() {
         }}
       >
         <FormField
-          label="Name:"
+          label="Name"
           type="text"
           name="name"
           value={values.name}
-          placeholder="New Category Name"
           onChange={handleChange}
         />
 
         <FormField
-          label="Description:"
+          label="Description"
           type="textarea"
           name="description"
           value={values.description}
-          placeholder="New Category Description"
           onChange={handleChange}
         />
 
         <FormField
-          label="Tag Color:"
+          label="Color"
           type="color"
           name="color"
           value={values.color}
-          placeholder="Color"
           onChange={handleChange}
         />
 
-        <button>Register</button>
+        <Button>Register</Button>
       </form>
+
+      {categories.length === 0 && <div>Loading...</div>}
 
       <ul>
         {categories.map((categories, index) => {
