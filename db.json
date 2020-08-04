@@ -2,39 +2,236 @@
   "categories": [
     {
       "id": 1,
-      "name": "FrontEnd",
+      "title": "FrontEnd",
       "description": "Learn FrontEnd",
-      "color": "#6BD1FF"
+      "color": "#4caabb"
     },
     {
       "id": 2,
-      "name": "BackEnd",
+      "title": "BackEnd",
       "description": "Learn BackEnd",
       "color": "#00C86F"
     },
     {
       "id": 3,
-      "name": "Data Science and AI",
+      "title": "Data Science and AI",
       "description": "Learn Data Science and AI",
       "color": "#5a4a5d"
     },
     {
       "id": 4,
-      "name": "Movies",
+      "title": "Movies",
       "description": "Watch Trailers",
       "color": "orange"
     },
     {
       "id": 5,
-      "name": "Games",
+      "title": "Games",
       "description": "Watch Games",
       "color": "red"
     },
     {
       "id": 6,
-      "name": "Personal",
+      "title": "Personal",
       "description": "Watch Trailers",
       "color": "#6b5be2"
+    }
+  ],
+  "videos": [
+    {
+      "id": 50,
+      "categoryId": 1,
+      "title": "Entenda o que é HTML",
+      "description": "Com certeza você já ouviu falar sobre HTML, mas se ainda tem dúvidas ou está começando na área este vídeo é pra você!",
+      "url": "https://www.youtube.com/watch?v=RCn2vachVyA"
+    },
+    {
+      "id": 51,
+      "categoryId": 1,
+      "title": "Como fazer um React e aprender a ideia do Virtual DOM na prática",
+      "description": "Já parou pra pensar como que o React renderiza as coisas na tela?",
+      "url": "https://www.youtube.com/watch?v=5MzOCxSWrrc"
+    },
+    {
+      "id": 1,
+      "categoryId": 1,
+      "title": "SEO com React",
+      "description": "Será que é tão difícil fazer SEO com React?",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "title": "Componentização com VanillaJS #AluraMais",
+      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "title": "Pare de chutar e aprenda a display: inline #01",
+      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "title": "Template String: Interpolando strings com JavaScript #AluraMais",
+      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "title": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
+      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+    },
+    {
+      "id": 7,
+      "categoryId": 1,
+      "title": "Novidades do Angular v9",
+      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
+      "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+    },
+    {
+      "id": 9,
+      "categoryId": 2,
+      "title": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
+      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+    },
+    {
+      "id": 10,
+      "categoryId": 2,
+      "title": "Programei 4 robôs que criam vídeos para mim no YouTube",
+      "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+    },
+    {
+      "id": 11,
+      "categoryId": 2,
+      "title": "API: Dicionário do Programador",
+      "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+    },
+    {
+      "id": 12,
+      "categoryId": 2,
+      "title": "Usando Git Direito",
+      "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+    },
+    {
+      "id": 13,
+      "categoryId": 3,
+      "title": "Teste de Turing",
+      "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+    },
+    {
+      "id": 14,
+      "categoryId": 3,
+      "title": "O que é Data Science?",
+      "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+    },
+    {
+      "id": 15,
+      "categoryId": 3,
+      "title": "Melhor forma de aprender Python",
+      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+    },
+    {
+      "id": 16,
+      "categoryId": 3,
+      "title": "Como ingressar no mercado de Data Science?",
+      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+    },
+    {
+      "id": 17,
+      "categoryId": 4,
+      "title": "Interestellar",
+      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+    },
+    {
+      "id": 18,
+      "categoryId": 4,
+      "title": "Gattaca",
+      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+    },
+    {
+      "id": 19,
+      "categoryId": 4,
+      "title": "A Chegada",
+      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+    },
+    {
+      "id": 20,
+      "categoryId": 4,
+      "title": "Feitiço do Tempo",
+      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+    },
+    {
+      "id": 21,
+      "categoryId": 5,
+      "title": "Final Fantasy 7",
+      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+    },
+    {
+      "id": 22,
+      "categoryId": 5,
+      "title": "Assassins Creed Valhalla",
+      "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+    },
+    {
+      "id": 23,
+      "categoryId": 5,
+      "title": "God of War 4",
+      "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+    },
+    {
+      "id": 24,
+      "categoryId": 5,
+      "title": "Resident Evil 8",
+      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "id": 52,
+      "categoryId": 6,
+      "title": "Como estudar melhor?",
+      "url": "https://www.youtube.com/watch?v=Is6c9KSGCbk&feature=youtu.be"
+    },
+    {
+      "id": 53,
+      "categoryId": 6,
+      "title": "Como Lidar Com as Inseguranças?",
+      "url": "ttps://www.youtube.com/watch?v=U3PeDYdY-iw"
+    },
+    {
+      "id": 54,
+      "categoryId": 6,
+      "title": "Pare de procrastinar?",
+      "url": "https://www.youtube.com/watch?v=km4pOGd_lHw"
+    },
+    {
+      "id": 55,
+      "categoryId": 6,
+      "title": "A mágica do Aprendizado",
+      "url": "https://www.youtube.com/watch?v=oTEXzpfEpPY"
+    },
+    {
+      "title": "Dev video",
+      "url": "https://www.youtube.com/watch?v=qm0IfG1GyZU",
+      "categoryId": 1,
+      "id": 56
+    },
+    {
+      "title": "Dev video",
+      "url": "https://www.youtube.com/watch?v=qm0IfG1GyZU",
+      "categoryId": 1,
+      "id": 57
     }
   ]
 }

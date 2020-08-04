@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageDefault from "../../../components/PageDefault";
 import FormField from "../../../components/FormField";
 import Button from "../../../components/Button";
+import useForm from "../../../hooks/useForm";
 
 function NewCategory() {
   const initialValues = {
@@ -11,23 +12,13 @@ function NewCategory() {
     color: "#000000",
   };
 
+  const { handleChange, values, clearForm } = useForm(initialValues);
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState(initialValues);
-
-  function setValue(key, value) {
-    setValues({
-      ...values,
-      [key]: value,
-    });
-  }
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setValue(name, value);
-  }
 
   useEffect(() => {
-    const URL = window.location.hostname.includes("localhost") ? "" : "";
+    const URL = window.location.hostname.includes("localhost")
+      ? "http://localhost:8080/categories"
+      : "https://devflixs.herokuapp.com/categories";
     fetch(URL).then(async (serverResponse) => {
       const response = await serverResponse.json();
       setCategories([...response]);
@@ -42,11 +33,11 @@ function NewCategory() {
           e.preventDefault();
           setCategories([...categories, values]);
 
-          setValues(initialValues);
+          clearForm(initialValues);
         }}
       >
         <FormField
-          label="Name"
+          label="Title"
           type="text"
           name="name"
           value={values.name}
@@ -76,7 +67,7 @@ function NewCategory() {
 
       <ul>
         {categories.map((categories, index) => {
-          return <li key={index}>{categories.name}</li>;
+          return <li key={index}>{categories.title}</li>;
         })}
       </ul>
 

@@ -1,37 +1,45 @@
-import React from "react";
-import Menu from "../../components/Menu";
-import data from "../../data/dados_iniciais.json";
+import React, { useEffect, useState } from "react";
+import PageDefault from "../../components/PageDefault";
 import BannerMain from "../../components/BannerMain";
 import Carousel from "../../components/Carousel";
-import Footer from "../../components/Footer";
+import categoriesRepo from "../../repositories/categories";
 
 function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    categoriesRepo
+      .getAllCategoriesWithVideos()
+      .then((categoriesWithVideos) => {
+        setData(categoriesWithVideos);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
   return (
-    <div style={{ background: "#141414" }}>
-      <Menu />
+    <PageDefault paddingAll={0}>
+      {data.length === 0 && <div>Loading...</div>}
 
-      <BannerMain
-        videoTitle={data.categorias[0].videos[0].titulo}
-        url={data.categorias[0].videos[0].url}
-        videoDescription={
-          "O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!"
+      {data.map((category, index) => {
+        if (index === 0) {
+          return (
+            <div key={category.id}>
+              <BannerMain
+                videoTitle={data[0].videos[0].title}
+                url={data[0].videos[0].url}
+                videoDescription={data[0].videos[0].description}
+              />
+
+              <Carousel ignoreFirstVideo category={data[0]} />
+            </div>
+          );
         }
-      />
 
-      <Carousel ignoreFirstVideo category={data.categorias[0]} />
-
-      <Carousel category={data.categorias[1]} />
-
-      <Carousel category={data.categorias[2]} />
-
-      <Carousel category={data.categorias[3]} />
-
-      <Carousel category={data.categorias[4]} />
-
-      <Carousel category={data.categorias[5]} />
-
-      <Footer />
-    </div>
+        return <Carousel key={category.id} category={category} />;
+      })}
+    </PageDefault>
   );
 }
 
