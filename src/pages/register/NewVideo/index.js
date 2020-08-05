@@ -10,6 +10,8 @@ import categoriesRepo from "../../../repositories/categories";
 function NewVideo() {
   const history = useHistory();
   const [categories, setCategories] = useState([]);
+  const categoriesTitle = categories.map(({ title }) => title);
+
   const { handleChange, values } = useForm({
     title: "Dev video",
     url: "https://www.youtube.com/watch?v=qm0IfG1GyZU",
@@ -59,11 +61,26 @@ function NewVideo() {
           name="category"
           value={values.category}
           onChange={handleChange}
+          suggestions={categoriesTitle}
         />
+        {categoriesTitle.includes(values.category) || values.category.length === 0 ? (
+          <div></div>
+        ) : (
+          <p
+            style={{
+              color: "#c60d42",
+              paddingTop: "30px",
+              fontSize: "16px",
+              fontWeight: "700",
+            }}
+          >
+            " Oh, this is a NEW CATEGORY! Please, REGISTER IT FIRST!"
+          </p>
+        )}
 
         <Button type="submit">Register</Button>
       </form>
-
+      <br />
       <Link to="/register/category">New Category</Link>
     </PageDefault>
   );
